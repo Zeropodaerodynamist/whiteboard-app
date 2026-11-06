@@ -31,7 +31,14 @@ Ready-made installers are on the download page: **https://zeropodnews.com/whiteb
 | Other Linux | `ZP-Whiteboard-2.1.0-x86_64.AppImage` / `-arm64.AppImage` | `chmod +x`, then run. On Ubuntu 23.10 and later use the .deb: AppArmor blocks the sandbox an AppImage needs |
 | Any browser | none | Build from source and run `npm run web`, then *Install as app* from the menu |
 
-The builds aren't code-signed yet, so Windows SmartScreen asks the first time: *More info → Run anyway*. Building it yourself takes a few minutes: see [Build from source](#build-from-source).
+### "Windows protected your PC"
+
+The builds aren't code-signed with a paid certificate yet, so the first time you run the Windows installer, **Microsoft Defender SmartScreen** shows a blue *"Windows protected your PC — unrecognized app"* notice. This is the warning Windows gives **any** app from a publisher it doesn't yet recognise; it is not a virus alert, and it does not mean anything was found in the file. To continue:
+
+1. Click **More info** (the small link in the dialog).
+2. Click the **Run anyway** button that appears.
+
+The installer then opens, shows the licence terms, and installs normally. The warning goes away once enough people have downloaded the app, or sooner if the builds are signed in a later release. If you'd rather not see it at all, you can [build from source](#build-from-source) in a few minutes.
 
 ## Using ZP Whiteboard
 

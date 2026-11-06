@@ -98,6 +98,7 @@
       "oneClick": false,
       "perMachine": false,
       "allowToChangeInstallationDirectory": true,
+      "license": "build/eula.txt",
       "artifactName": "ZP-Whiteboard-Setup-${version}-${arch}.${ext}"
     },
     "portable": {

@@ -1,0 +1,32 @@
+ZP Whiteboard — Terms of Use
+Copyright 2026 Zeropod
+
+Please read these terms before installing. By installing and using ZP Whiteboard
+you agree to them.
+
+1. The software.
+   ZP Whiteboard is an offline whiteboard and document application. It runs on
+   your own computer and stores your work on your own computer.
+
+2. Licence.
+   Most of ZP Whiteboard is open-source software under the Apache License,
+   Version 2.0, a copy of which is installed alongside this application and is
+   also available at https://www.apache.org/licenses/LICENSE-2.0 . Third-party
+   components are listed, with their licences, in THIRD-PARTY-NOTICES.
+
+3. Your data and your keys.
+   Your documents, boards and encryption keys stay on your device. Zeropod has
+   no copy of them and no way to recover them. If you lose your passphrase or
+   key material, encrypted documents cannot be recovered by anyone. Keep backups.
+
+4. No warranty.
+   The software is provided "AS IS", without warranty of any kind, express or
+   implied, including fitness for a particular purpose. You use it at your own
+   risk. To the maximum extent permitted by law, Zeropod is not liable for any
+   loss or damage arising from its use, including loss of data.
+
+5. This is version 1.
+   This is an early release offered to the community for testing and feedback.
+   It may contain defects. Do not rely on it as the only store of important data.
+
+If you do not agree to these terms, do not install the software.
