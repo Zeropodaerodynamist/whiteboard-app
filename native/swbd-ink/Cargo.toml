@@ -1,0 +1,23 @@
+[package]
+name = "swbd-ink"
+version.workspace = true
+edition = "2021"
+description = "Handwriting recognition sidecar for Whiteboard (Windows Ink analysis, offline)"
+license.workspace = true
+publish = false
+
+[dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+
+[target.'cfg(windows)'.dependencies]
+windows = { version = "=0.62.2", features = [
+    "Foundation",
+    "Foundation_Collections",
+    "Foundation_Numerics",
+    "UI_Input_Inking",
+    "UI_Input_Inking_Analysis",
+    "Win32_System_Com",
+] }
+windows-collections = "=0.3.2"
+windows-numerics = "=0.3.1"

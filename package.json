@@ -1,0 +1,119 @@
+{
+  "name": "zp-whiteboard",
+  "productName": "ZP Whiteboard",
+  "version": "2.1.0",
+  "description": "Infinite whiteboard with Markdown documents, Word-style review, ink and handwriting recognition.",
+  "main": "electron/main.js",
+  "desktopName": "zp-whiteboard.desktop",
+  "author": {
+    "name": "Zeropod",
+    "email": "jesone.dev@zeropodnews.com"
+  },
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/Zeropodaerodynamist/whiteboard-app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Zeropodaerodynamist/whiteboard-app.git"
+  },
+  "private": true,
+  "scripts": {
+    "postinstall": "node tools/vendor.js",
+    "start": "electron .",
+    "web": "node serve.js",
+    "icons": "node tools/make-icons.js",
+    "dist": "electron-builder --win --x64",
+    "dist:arm64": "electron-builder --win --arm64",
+    "dist:linux": "electron-builder --linux",
+    "native": "node tools/build-native.js",
+    "test": "cargo test --release --manifest-path native/Cargo.toml --workspace",
+    "notices": "node tools/third-party-notices.js"
+  },
+  "devDependencies": {
+    "codemirror": "5.65.21",
+    "dompurify": "3.4.17",
+    "electron": "45.0.0",
+    "electron-builder": "26.18.0",
+    "emojilib": "4.0.3",
+    "marked": "18.1.1",
+    "unicode-emoji-json": "0.9.0"
+  },
+  "build": {
+    "appId": "com.zeropodnews.whiteboard",
+    "productName": "ZP Whiteboard",
+    "files": [
+      "index.html",
+      "styles.css",
+      "manifest.webmanifest",
+      "js/**",
+      "vendor/**",
+      "icons/**",
+      "electron/**",
+      "LICENSE",
+      "NOTICE",
+      "THIRD-PARTY-NOTICES.md"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "electronFuses": {
+      "runAsNode": false,
+      "enableCookieEncryption": true,
+      "enableNodeOptionsEnvironmentVariable": false,
+      "enableNodeCliInspectArguments": false,
+      "enableEmbeddedAsarIntegrityValidation": true,
+      "onlyLoadAppFromAsar": true
+    },
+    "fileAssociations": [
+      {
+        "ext": "wbdoc",
+        "name": "Whiteboard workspace",
+        "mimeType": "application/x-wbdoc",
+        "description": "Whiteboard workspace (document, board and comments)"
+      },
+      {
+        "ext": "wboard",
+        "name": "Whiteboard board",
+        "mimeType": "application/x-wboard",
+        "description": "Whiteboard board"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.png",
+      "extraResources": [
+        {
+          "from": "bin",
+          "to": "bin",
+          "filter": [
+            "swbd-ink.exe"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "ZP-Whiteboard-Setup-${version}-${arch}.${ext}"
+    },
+    "portable": {
+      "artifactName": "ZP-Whiteboard-Portable-${version}-${arch}.${ext}"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Office",
+      "syncDesktopName": true,
+      "icon": "build/icon.png"
+    },
+    "appImage": {
+      "artifactName": "ZP-Whiteboard-${version}-${arch}.${ext}"
+    }
+  }
+}

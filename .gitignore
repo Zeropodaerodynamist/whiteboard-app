@@ -1,0 +1,21 @@
+# Installed and built (npm install, npm run native, npm run dist)
+node_modules/
+vendor/
+native/target/
+bin/
+dist/
+
+# Local tools, editors, OS
+.firefox-pilot/
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs, temporary files, local settings
+*.log
+npm-debug.log*
+*.tmp
+.env*
